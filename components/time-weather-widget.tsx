@@ -63,7 +63,7 @@ export function TimeWeatherWidget() {
       {/* Weather Section */}
       <div className="border-t border-white/20 pt-4 mb-4">
         <div className="flex items-center justify-between mb-4">
-          <h3 className="text-white font-semibold">Weather</h3>
+          <h3 className="text-white font-semibold">Radio Shows</h3>
           <button
             onClick={refreshWeather}
             className="p-1 rounded-full text-white/70 hover:text-white transition-all duration-200 hover:scale-110 active:scale-95"
@@ -97,8 +97,8 @@ export function TimeWeatherWidget() {
       <div className="border-t border-white/20 pt-4">
         <div className="flex items-center justify-between mb-3">
           <div>
-            <h3 className="text-white font-semibold text-sm">Diecast by Dollar</h3>
-            <p className="text-white/70 text-xs">YouTube Channel</p>
+            <h3 className="text-white font-semibold text-sm">Mira la webcam de la cabina</h3>
+            <p className="text-white/70 text-xs">Video en vivo patrocinado por:</p>
           </div>
           <div className="flex items-center gap-2">
             <Youtube className="w-4 h-4 text-red-500" />
@@ -110,10 +110,10 @@ export function TimeWeatherWidget() {
           className="w-full bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-red-600 text-white text-sm font-medium py-2 px-4 rounded-lg transition-all duration-200 hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
         >
           <Youtube className="w-4 h-4" />
-          Subscribe
+          Ver webcam
         </button>
 
-        <p className="text-white/60 text-xs text-center mt-2">HotWheels, Matchbox and Jada Toys</p>
+        <p className="text-white/60 text-xs text-center mt-2">Programación sujeta a los programas en vivo</p>
       </div>
     </div>
   )
