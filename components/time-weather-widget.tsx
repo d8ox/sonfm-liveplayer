@@ -63,7 +63,7 @@ export function TimeWeatherWidget() {
       {/* Weather Section */}
       <div className="border-t border-white/20 pt-4 mb-4">
         <div className="flex items-center justify-between mb-4">
-          <h3 className="text-white font-semibold">Radio Shows</h3>
+          <h3 className="text-white font-semibold">Programación</h3>
           <button
             onClick={refreshWeather}
             className="p-1 rounded-full text-white/70 hover:text-white transition-all duration-200 hover:scale-110 active:scale-95"
