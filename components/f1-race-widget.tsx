@@ -56,12 +56,12 @@ export function F1RaceWidget() {
       {/* Header */}
       <div className="flex items-center gap-3 mb-4">
         <Image src="/images/f1-official-logo.webp" alt="F1 Logo" width={32} height={32} className="w-8 h-8" />
-        <span className="text-white font-bold text-lg">TOP 10 MÚSICA</span>
+        <span className="text-white font-bold text-lg">TOP 5 MÚSICA</span>
       </div>
 
       {/* Race Info */}
       <div className="mb-4">
-        <h3 className="text-white font-semibold text-lg">Lista Top 10 de la radio</h3>
+        <h3 className="text-white font-semibold text-lg">Lista Top 5 de la radio</h3>
         <p className="text-white/70 text-sm">Las canciones que más suenan</p>
       </div>
 
@@ -107,7 +107,6 @@ export function F1RaceWidget() {
                   <div className="text-white font-semibold text-sm">{driver.code}</div>
                 </div>
               </div>
-
               <div className="text-white/70 text-xs tabular-nums min-w-[60px] text-right">{driver.gap}</div>
 
               <div
@@ -126,7 +125,7 @@ export function F1RaceWidget() {
       <div className="mt-4 pt-4 border-t border-white/20">
         <button className="w-full bg-gray-700/50 hover:bg-gray-600/50 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2">
           <Play className="w-4 h-4" />
-          <span>Ver toda la lista</span>
+          <span>Siguiente actualización en:</span>
           <span className="ml-2 font-mono tabular-nums text-sm">{formatLiveTime()}</span>
         </button>
       </div>
