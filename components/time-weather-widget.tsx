@@ -98,7 +98,7 @@ export function TimeWeatherWidget() {
         <div className="flex items-center justify-between mb-3">
           <div>
             <h3 className="text-white font-semibold text-sm">Mira la webcam de la cabina</h3>
-            <p className="text-white/70 text-xs">Video en vivo patrocinado por:</p>
+            <p className="text-white/70 text-xs">Transmición en vivo por YouTube LIVE</p>
           </div>
           <div className="flex items-center gap-2">
             <Youtube className="w-4 h-4 text-red-500" />
