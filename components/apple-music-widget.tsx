@@ -94,8 +94,8 @@ export function AppleMusicWidget() {
       {/* Song Info + Like + Volume */}
       <div className="mb-4 flex items-start justify-between">
         <div>
-          <h3 className="text-white text-lg font-[590] mb-1">Admirin You</h3>
-          <p className="text-white/70 text-sm font-normal">Karan Aujla</p>
+          <h3 className="text-white text-lg font-[590] mb-1">SONFM Radio</h3>
+          <p className="text-white/70 text-sm font-normal">Señal En Vivo</p>
         </div>
 
         <div className="flex items-center gap-2">
@@ -147,10 +147,6 @@ export function AppleMusicWidget() {
             className="absolute top-0 left-0 h-full bg-white rounded-full transition-all duration-300"
             style={{ width: `${progress}%` }}
           />
-        </div>
-        <div className="flex justify-between text-xs text-white/70 font-mono tabular-nums">
-          <span>{formatTime(currentTime)}</span>
-          <span>{formatTime(duration)}</span>
         </div>
       </div>
 
