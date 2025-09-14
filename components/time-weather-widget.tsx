@@ -31,7 +31,7 @@ export function TimeWeatherWidget() {
   }
 
   const formatTime = (date: Date) => {
-    return date.toLocaleTimeString("en-US", {
+    return date.toLocaleTimeString("es-CR", {
       hour12: true,
       hour: "2-digit",
       minute: "2-digit",
