@@ -20,14 +20,14 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-white/10 backdrop-blur-md border border-white/20 shadow-xl rounded-2xl px-6 py-4">
         <p className="text-white/90 text-sm">
-          Designed and Developed with ❤️ by{" "}
+          Desarrollo web por{" "}
           <a
-            href="https://youtube.com/@diecastbydollar"
+            href="https://08crew.com"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-white/80 transition-colors underline"
           >
-            Dollar Singh
+            08 Crew
           </a>
         </p>
       </footer>
