@@ -31,7 +31,7 @@ export function TimeWeatherWidget() {
   }
 
   const formatTime = (date: Date) => {
-    return date.toLocaleTimeString("es-CR", {
+    return date.toLocaleTimeString("en-US", {
       hour12: true,
       hour: "2-digit",
       minute: "2-digit",
@@ -40,7 +40,7 @@ export function TimeWeatherWidget() {
   }
 
   const formatDate = (date: Date) => {
-    return date.toLocaleDateString("en-US", {
+    return date.toLocaleDateString("es-CR", {
       weekday: "long",
       year: "numeric",
       month: "long",
