@@ -126,6 +126,7 @@ export function F1RaceWidget() {
         <button className="w-full bg-gray-700/50 hover:bg-gray-600/50 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2">
           <Play className="w-4 h-4" />
           <span>Siguiente actualización en:</span>
+          <br>
           <span className="ml-2 font-mono tabular-nums text-sm">{formatLiveTime()}</span>
         </button>
       </div>
