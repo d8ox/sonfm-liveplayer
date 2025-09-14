@@ -15,6 +15,7 @@ export default function Home() {
         <AppleMusicWidget />
         <TimeWeatherWidget />
         <F1RaceWidget />
+<TimeWeatherWidget />
       </div>
 
       {/* Footer */}
