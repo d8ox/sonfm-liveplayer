@@ -99,15 +99,6 @@ export function AppleMusicWidget() {
         </div>
 
         <div className="flex items-center gap-2">
-          <button
-            onClick={() => setIsLiked(!isLiked)}
-            className={`p-2 rounded-full transition-all duration-200 hover:scale-110 active:scale-95 hover:bg-white/10 ${
-              isLiked ? "text-red-400" : "text-white/70 hover:text-white"
-            }`}
-          >
-            <Heart className="w-5 h-5" fill={isLiked ? "currentColor" : "none"} />
-          </button>
-
           <div className="relative">
             <button
               onClick={() => setIsMuted(!isMuted)}
