@@ -5,7 +5,7 @@ import { RefreshCw, Sun, Cloud, CloudRain, Snowflake, Wind, Youtube } from "luci
 
 const weatherConditions = [
   { name: "Hard Dance", icon: Sun, temp: 24, feels: 26, humidity: 45, color: "bg-yellow-500" },
-  { name: "La Trifulka", icon: Cloud, temp: Sábados 11 PM, feels: lUNES 2 pm, humidity: Diego Y NACHO, color: "bg-gray-500" },
+  { name: "La Trifulka", icon: Cloud, temp: 18, feels: 20, humidity: 65, color: "bg-gray-500" },
   { name: "Musica con Diego", icon: CloudRain, temp: 15, feels: 13, humidity: 85, color: "bg-blue-500" },
   { name: "Mezclas con Nacho", icon: Snowflake, temp: -2, feels: -5, humidity: 75, color: "bg-blue-200" },
   { name: "Mañanero", icon: Wind, temp: 20, feels: 18, humidity: 55, color: "bg-teal-500" },
