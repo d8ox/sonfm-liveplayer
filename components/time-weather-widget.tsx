@@ -4,11 +4,11 @@ import { useState, useEffect } from "react"
 import { RefreshCw, Sun, Cloud, CloudRain, Snowflake, Wind, Youtube } from "lucide-react"
 
 const weatherConditions = [
-  { name: "Sunny", icon: Sun, temp: 24, feels: 26, humidity: 45, color: "bg-yellow-500" },
-  { name: "Cloudy", icon: Cloud, temp: 18, feels: 20, humidity: 65, color: "bg-gray-500" },
-  { name: "Rainy", icon: CloudRain, temp: 15, feels: 13, humidity: 85, color: "bg-blue-500" },
-  { name: "Snowy", icon: Snowflake, temp: -2, feels: -5, humidity: 75, color: "bg-blue-200" },
-  { name: "Windy", icon: Wind, temp: 20, feels: 18, humidity: 55, color: "bg-teal-500" },
+  { name: "Hard Dance", icon: Sun, temp: 24, feels: 26, humidity: 45, color: "bg-yellow-500" },
+  { name: "La Trifulka", icon: Cloud, temp: 18, feels: 20, humidity: 65, color: "bg-gray-500" },
+  { name: "Musica con Diego", icon: CloudRain, temp: 15, feels: 13, humidity: 85, color: "bg-blue-500" },
+  { name: "Mezclas con Nacho", icon: Snowflake, temp: -2, feels: -5, humidity: 75, color: "bg-blue-200" },
+  { name: "Mañanero", icon: Wind, temp: 20, feels: 18, humidity: 55, color: "bg-teal-500" },
 ]
 
 export function TimeWeatherWidget() {
@@ -84,11 +84,11 @@ export function TimeWeatherWidget() {
 
         <div className="space-y-2">
           <div className="flex justify-between text-sm">
-            <span className="text-white/70">Feels like</span>
+            <span className="text-white/70">Repetición</span>
             <span className="text-white tabular-nums">{currentWeather.feels}°C</span>
           </div>
           <div className="flex justify-between text-sm">
-            <span className="text-white/70">Humidity</span>
+            <span className="text-white/70">Host</span>
             <span className="text-white tabular-nums">{currentWeather.humidity}%</span>
           </div>
         </div>
@@ -112,7 +112,6 @@ export function TimeWeatherWidget() {
           <Youtube className="w-4 h-4" />
           Ver webcam
         </button>
-
         <p className="text-white/60 text-xs text-center mt-2">Programación sujeta a los programas en vivo</p>
       </div>
     </div>
