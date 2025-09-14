@@ -82,8 +82,8 @@ export function AppleMusicWidget() {
       {/* Cover Art */}
       <div className="relative mb-4 group">
         <Image
-          src="/images/making-memories-album.jpg"
-          alt="Karan Aujla - Making Memories"
+          src="https://beta.sonfmradio.com/portal/wp-content/uploads/2025/07/awIiaQQ5_400x400-copia.png"
+          alt="SONFM Radio En Vivo"
           width={256}
           height={256}
           className="w-full aspect-square rounded-xl object-cover transition-transform duration-300 group-hover:scale-[1.02]"
