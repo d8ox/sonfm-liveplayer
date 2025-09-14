@@ -10,9 +10,8 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  title: "Glassmorphic Widget Dashboard",
-  description: "Interactive widget dashboard with glassmorphic design",
-  generator: "v0.app",
+  title: "SONFM Radio En Vivo",
+  description: "Señal en vivo de la radio en linea de Costa Rica",
 }
 
 export default function RootLayout({
