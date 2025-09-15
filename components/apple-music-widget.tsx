@@ -115,11 +115,7 @@ export function AppleMusicWidget() {
           <div className="relative">
             <button
               onClick={() => setIsMuted(!isMuted)}
-              onMouseEnter={() => setShowVolumeSlider(true)}
-              onMouseLeave={() => setShowVolumeSlider(false)}
-              className="p-2 rounded-full text-white/70 hover:text-white transition-all duration-200 hover:scale-110 active:scale-95 hover:bg-white/10"
-            >
-              {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+              
             </button>
             {showVolumeSlider && (
               <div
