@@ -8,7 +8,6 @@ import Image from "next/image"
 export function AppleMusicWidget() {
   const [isPlaying, setIsPlaying] = useState(false)
   const [progress, setProgress] = useState(0)
-  const [isLiked, setIsLiked] = useState(false)
   const [isMuted, setIsMuted] = useState(false)
   const [isShuffled, setIsShuffled] = useState(false)
   const [repeatMode, setRepeatMode] = useState<"off" | "all" | "one">("off")
@@ -52,6 +51,20 @@ export function AppleMusicWidget() {
     if (!audioRef.current) return
     audioRef.current.volume = isMuted ? 0 : volume / 100
   }, [volume, isMuted])
+
+  // Media Session API (Muestra carátula en reproductores del SO / navegador)
+  useEffect(() => {
+    if ("mediaSession" in navigator) {
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: "SONFM Radio",
+        artist: "Señal En Vivo",
+        album: "SONFM",
+        artwork: [
+          { src: "https://beta.sonfmradio.com/portal/wp-content/uploads/2025/07/awIiaQQ5_400x400-copia.png", sizes: "512x512", type: "image/png" },
+        ],
+      })
+    }
+  }, [])
 
   const handleProgressClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!audioRef.current) return
