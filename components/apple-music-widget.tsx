@@ -1,6 +1,5 @@
 "use client"
 
-import type React from "react"
 import { useState, useEffect, useRef } from "react"
 import { Heart, Volume2, VolumeX, Shuffle, SkipBack, Play, Pause, SkipForward, Repeat } from "lucide-react"
 import Image from "next/image"
@@ -21,11 +20,7 @@ export function AppleMusicWidget() {
   // Play / pause control
   useEffect(() => {
     if (!audioRef.current) return
-    if (isPlaying) {
-      audioRef.current.play()
-    } else {
-      audioRef.current.pause()
-    }
+    isPlaying ? audioRef.current.play() : audioRef.current.pause()
   }, [isPlaying])
 
   // Update current time & progress
@@ -52,7 +47,7 @@ export function AppleMusicWidget() {
     audioRef.current.volume = isMuted ? 0 : volume / 100
   }, [volume, isMuted])
 
-  // Media Session API (Muestra carátula en reproductores del SO / navegador)
+  // Media Session API
   useEffect(() => {
     if ("mediaSession" in navigator) {
       navigator.mediaSession.metadata = new MediaMetadata({
@@ -60,7 +55,11 @@ export function AppleMusicWidget() {
         artist: "Señal En Vivo",
         album: "SONFM",
         artwork: [
-          { src: "https://beta.sonfmradio.com/portal/wp-content/uploads/2025/07/awIiaQQ5_400x400-copia.png", sizes: "512x512", type: "image/png" },
+          {
+            src: "https://beta.sonfmradio.com/portal/wp-content/uploads/2025/07/awIiaQQ5_400x400-copia.png",
+            sizes: "512x512",
+            type: "image/png"
+          },
         ],
       })
     }
@@ -73,13 +72,6 @@ export function AppleMusicWidget() {
     const newTime = (clickX / rect.width) * duration
     audioRef.current.currentTime = newTime
     setCurrentTime(newTime)
-  }
-
-  const formatTime = (seconds: number) => {
-    if (isNaN(seconds)) return "0:00"
-    const mins = Math.floor(seconds / 60)
-    const secs = Math.floor(seconds % 60)
-    return `${mins}:${secs.toString().padStart(2, "0")}`
   }
 
   return (
@@ -104,36 +96,34 @@ export function AppleMusicWidget() {
         <div className="absolute inset-0 bg-black/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
 
-      {/* Song Info + Like + Volume */}
+      {/* Info + Volume */}
       <div className="mb-4 flex items-start justify-between">
         <div>
-          <h3 className="text-white text-lg font-[590] mb-1">SONFM Radio</h3>
-          <p className="text-white/70 text-sm font-normal">Señal En Vivo</p>
+          <h3 className="text-white text-lg font-semibold mb-1">SONFM Radio</h3>
+          <p className="text-white/70 text-sm">Señal En Vivo</p>
         </div>
 
-        <div className="flex items-center gap-2">
-          <div className="relative">
-            <button
-              onClick={() => setIsMuted(!isMuted)}
-              
-            </button>
-            {showVolumeSlider && (
-              <div
-                className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-black/80 backdrop-blur-sm rounded-lg p-2 w-24"
-                onMouseEnter={() => setShowVolumeSlider(true)}
-                onMouseLeave={() => setShowVolumeSlider(false)}
-              >
-                <input
-                  type="range"
-                  min="0"
-                  max="100"
-                  value={volume}
-                  onChange={(e) => setVolume(Number(e.target.value))}
-                  className="w-full h-1 bg-white/20 rounded-lg appearance-none cursor-pointer slider"
-                />
-              </div>
-            )}
-          </div>
+        <div className="relative">
+          <button
+            onClick={() => setIsMuted(!isMuted)}
+            onMouseEnter={() => setShowVolumeSlider(true)}
+            onMouseLeave={() => setShowVolumeSlider(false)}
+            className="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition"
+          >
+            {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+          </button>
+          {showVolumeSlider && (
+            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-black/80 backdrop-blur-sm rounded-lg p-2 w-24">
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value={volume}
+                onChange={(e) => setVolume(Number(e.target.value))}
+                className="w-full h-1 bg-white/20 rounded-lg appearance-none cursor-pointer"
+              />
+            </div>
+          )}
         </div>
       </div>
 
@@ -165,9 +155,7 @@ export function AppleMusicWidget() {
 
         <button
           onClick={() => setIsPlaying(!isPlaying)}
-          className={`p-3 rounded-full bg-white text-black hover:bg-white/90 transition-all duration-200 hover:scale-110 active:scale-95 ${
-            isPlaying ? "animate-pulse" : ""
-          }`}
+          className={`p-3 rounded-full bg-white text-black hover:bg-white/90 transition-all duration-200 hover:scale-110 active:scale-95 ${isPlaying ? "animate-pulse" : ""}`}
         >
           {isPlaying ? <Pause className="w-6 h-6" /> : <Play className="w-6 h-6 ml-0.5" />}
         </button>
@@ -180,9 +168,7 @@ export function AppleMusicWidget() {
           onClick={() =>
             setRepeatMode(repeatMode === "off" ? "all" : repeatMode === "all" ? "one" : "off")
           }
-          className={`p-2 rounded-full relative ${
-            repeatMode !== "off" ? "text-white" : "text-white/70 hover:text-white"
-          } hover:bg-white/10`}
+          className={`p-2 rounded-full relative ${repeatMode !== "off" ? "text-white" : "text-white/70 hover:text-white"} hover:bg-white/10`}
         >
           <Repeat className="w-5 h-5" />
           {repeatMode === "one" && (
