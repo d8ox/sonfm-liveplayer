@@ -15,8 +15,31 @@ const drivers = [
     teamColor: "bg-blue-600",
     logo: "/images/redbull-logo.png",
   },
-  { position: 2, code: "PIA", name: "Piastri", team: "McLaren", gap: "+0.785", tire: "M", teamColor: "bg-orange-500" },
-  { position: 3, code: "RUS", name: "Russell", team: "Mercedes", gap: "+2.785", tire: "M", teamColor: "bg-gray-400" },
+
+  {
+    position: 2,
+    code: "VER",
+    name: "Verstappen",
+    team: "Red Bull",
+    gap: "Leader",
+    tire: "M",
+    teamColor: "bg-blue-600",
+    logo: "/images/redbull-logo.png",
+  },
+
+  {
+    position: 3,
+    code: "VER",
+    name: "Verstappen",
+    team: "Red Bull",
+    gap: "Leader",
+    tire: "M",
+    teamColor: "bg-blue-600",
+    logo: "/images/redbull-logo.png",
+  },
+
+
+  
   { position: 4, code: "SAI", name: "Sainz", team: "Ferrari", gap: "+5.785", tire: "H", teamColor: "bg-red-600" },
   { position: 5, code: "NOR", name: "Norris", team: "McLaren", gap: "+0.785", tire: "H", teamColor: "bg-orange-500" },
 ]
@@ -55,7 +78,6 @@ export function F1RaceWidget() {
     <div className="w-80 h-[430px] bg-white/10 backdrop-blur-md border border-white/20 shadow-xl rounded-2xl p-6 flex flex-col">
       {/* Header */}
       <div className="flex items-center gap-3 mb-4">
-        <Image src="/images/f1-official-logo.webp" alt="F1 Logo" width={32} height={32} className="w-8 h-8" />
         <span className="text-white font-bold text-lg">TOP 5 MÚSICA</span>
       </div>
 
@@ -84,21 +106,21 @@ export function F1RaceWidget() {
                 ) : (
                   <div className={`w-5 h-5 rounded-full ${driver.teamColor} flex items-center justify-center`}>
                     {driver.team === "Mercedes" ? (
-                      <span className="text-white text-xs font-bold">M</span>
+                      <span className="text-white text-xs font-bold">▲</span>
                     ) : driver.team === "Williams" ? (
-                      <span className="text-white text-xs font-bold">W</span>
+                      <span className="text-white text-xs font-bold">▲</span>
                     ) : driver.team === "Ferrari" ? (
-                      <span className="text-white text-xs font-bold">F</span>
+                      <span className="text-white text-xs font-bold">▼</span>
                     ) : driver.team === "Alpine" ? (
-                      <span className="text-white text-xs font-bold">A</span>
+                      <span className="text-white text-xs font-bold">▼</span>
                     ) : driver.team === "RB" ? (
-                      <span className="text-white text-xs font-bold">R</span>
+                      <span className="text-white text-xs font-bold">▼</span>
                     ) : driver.team === "Haas" ? (
-                      <span className="text-white text-xs font-bold">H</span>
+                      <span className="text-white text-xs font-bold">▼</span>
                     ) : driver.team === "Aston Martin" ? (
-                      <span className="text-white text-xs font-bold">AM</span>
+                      <span className="text-white text-xs font-bold">▼</span>
                     ) : driver.team === "Kick Sauber" ? (
-                      <span className="text-white text-xs font-bold">K</span>
+                      <span className="text-white text-xs font-bold">▼</span>
                     ) : null}
                   </div>
                 )}
